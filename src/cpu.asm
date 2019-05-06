@@ -55,5 +55,59 @@ _x05: ; DEC B
     dec b
     DUMP ; DFD0 <- 50 FF FF FE FF FF FF FF
 
+_x07: ; RLCA
+    RESET 0
+    rlca
+    DUMP ; DFC8 <- 60 00 00 FF 00 00 00 00
+
+    RESET $ffff
+    rlca
+    DUMP ; DFC0 <- 50 FF FF FE FF FF FF FF
+
+_x09: ; ADD HL,BC
+    RESET 0
+    add hl,bc
+    DUMP ; DFB8 <- 60 00 00 FF 00 00 00 00
+
+    RESET $ffff
+    add hl,bc
+    DUMP ; DFB0 <- 50 FF FF FE FF FF FF FF
+
+_x0B: ; DEC BC
+    RESET 0
+    dec bc
+    DUMP ; DFA8 <- 60 00 00 FF 00 00 00 00
+
+    RESET $ffff
+    dec bc
+    DUMP ; DFA0 <- 50 FF FF FE FF FF FF FF
+
+_x0C: ; INC C
+    RESET 0
+    inc c
+    DUMP ; DF98 <- 60 00 00 FF 00 00 00 00
+
+    RESET $ffff
+    inc c
+    DUMP ; DF90 <- 50 FF FF FE FF FF FF FF
+
+_x0D: ; DEC C
+    RESET 0
+    dec c
+    DUMP ; DF88 <- 60 00 00 FF 00 00 00 00
+
+    RESET $ffff
+    dec b
+    DUMP ; DF80 <- 50 FF FF FE FF FF FF FF
+
+_x0F: ; RRCA
+    RESET 0
+    rrca
+    DUMP ; DF88 <- 60 00 00 FF 00 00 00 00
+
+    RESET $ffff
+    rrca
+    DUMP ; DF80 <- 50 FF FF FE FF FF FF FF
+
 endloop:
     jp endloop
