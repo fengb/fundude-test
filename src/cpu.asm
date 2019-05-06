@@ -38,50 +38,81 @@ SECTION "main", HOME[$150]
     di
     ld sp, $e000
 
+; ----
+
     ; OP 03
     TEST_CASE inc bc
-    ; DFF8 <- 00 00 01 00 00 00 00 00
-    ; DFF0 <- F0 FF FF 00 01 00 FF 00
+AxDFF0: MACRO
+        DB $F0,$FF,$FF,$00,$01,$00,$FF,$00
+        DB $00,$00,$01,$00,$00,$00,$00,$00
+        ENDM
 
     ; OP 04
     TEST_CASE inc b
-    ; DFE8 <- 00 00 00 01 00 00 00 00
-    ; DFE0 <- B0 FF FF 00 FF FF FF FF
+AxDFE0: MACRO
+        DB $B0,$FF,$FF,$00,$FF,$FF,$FF,$FF
+        DB $00,$00,$00,$01,$00,$00,$00,$00
+        ENDM
 
     ; OP 05
     TEST_CASE dec b
-    ; DFD8 <- 60 00 00 FF 00 00 00 00
-    ; DFD0 <- 50 FF FF FE FF FF FF FF
+AxDFD0: MACRO
+        DB $50,$FF,$FF,$FE,$FF,$FF,$FF,$FF
+        DB $60,$00,$00,$FF,$00,$00,$00,$00
+        ENDM
 
     ; OP 07
     TEST_CASE rlca
-    ; DFC8 <- 60 00 00 FF 00 00 00 00
-    ; DFC0 <- 50 FF FF FE FF FF FF FF
+AxDFC0: MACRO
+        DB $10,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $00,$00,$00,$00,$00,$00,$00,$00
+        ENDM
 
     ; OP 09
     TEST_CASE add hl,bc
-    ; DFB8 <- 60 00 00 FF 00 00 00 00
-    ; DFB0 <- 50 FF FF FE FF FF FF FF
+AxDFB0: MACRO
+        DB $B0,$FF,$FF,$FF,$FF,$FF,$FE,$FF
+        DB $00,$00,$00,$00,$00,$00,$00,$00
+        ENDM
 
     ; OP 0B
     TEST_CASE dec bc
-    ; DFA8 <- 60 00 00 FF 00 00 00 00
-    ; DFA0 <- 50 FF FF FE FF FF FF FF
+AxDFA0: MACRO
+        DB $F0,$FF,$FE,$FF,$FF,$FF,$FF,$FF
+        DB $00,$00,$FF,$FF,$00,$00,$00,$00
+        ENDM
 
     ; OP 0C
     TEST_CASE inc c
-    ; DF98 <- 60 00 00 FF 00 00 00 00
-    ; DF90 <- 50 FF FF FE FF FF FF FF
+AxDF90: MACRO
+        DB $B0,$FF,$00,$FF,$FF,$FF,$FF,$FF
+        DB $00,$00,$01,$00,$00,$00,$00,$00
+        ENDM
 
     ; OP 0D
     TEST_CASE dec c
-    ; DF88 <- 60 00 00 FF 00 00 00 00
-    ; DF80 <- 50 FF FF FE FF FF FF FF
+AxDF80: MACRO
+        DB $50,$FF,$FE,$FF,$FF,$FF,$FF,$FF
+        DB $60,$00,$FF,$00,$00,$00,$00,$00
+        ENDM
 
     ; OP 0F
     TEST_CASE rrca
-    ; DF88 <- 60 00 00 FF 00 00 00 00
-    ; DF80 <- 50 FF FF FE FF FF FF FF
+AxDF70: MACRO
+        DB $10,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $00,$00,$00,$00,$00,$00,$00,$00
+        ENDM
 
 endloop:
     jp endloop
+
+SECTION "data", ROMX[$4000]
+    AxDF70
+    AxDF80
+    AxDF90
+    AxDFA0
+    AxDFB0
+    AxDFC0
+    AxDFD0
+    AxDFE0
+    AxDFF0
