@@ -471,9 +471,303 @@ AxDC40: MACRO
         DB $C0,$00,$00,$00,$00,$00,$00,$00
         ENDM
 
+; ----
+
+    ; OP A0
+    TEST_CASE and b
+AxDC30: MACRO
+        DB $20,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $A0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP A1
+    TEST_CASE and c
+AxDC20: MACRO
+        DB $20,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $A0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP A2
+    TEST_CASE and d
+AxDC10: MACRO
+        DB $20,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $A0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP A3
+    TEST_CASE and e
+AxDC00: MACRO
+        DB $20,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $A0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP A4
+    TEST_CASE and h
+AxDBF0: MACRO
+        DB $20,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $A0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP A5
+    TEST_CASE and l
+AxDBE0: MACRO
+        DB $20,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $A0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP A7
+    TEST_CASE and a
+AxDBD0: MACRO
+        DB $20,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $A0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP A8
+    TEST_CASE xor b
+AxDBC0: MACRO
+        DB $80,$00,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $80,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP A9
+    TEST_CASE xor c
+AxDBB0: MACRO
+        DB $80,$00,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $80,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP AA
+    TEST_CASE xor d
+AxDBA0: MACRO
+        DB $80,$00,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $80,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP AB
+    TEST_CASE xor e
+AxDB90: MACRO
+        DB $80,$00,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $80,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP AC
+    TEST_CASE xor h
+AxDB80: MACRO
+        DB $80,$00,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $80,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP AD
+    TEST_CASE xor l
+AxDB70: MACRO
+        DB $80,$00,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $80,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP AF
+    TEST_CASE xor a
+AxDB60: MACRO
+        DB $80,$00,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $80,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+; ----
+
+    ; OP B0
+    TEST_CASE or b
+AxDB50: MACRO
+        DB $00,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $80,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP B1
+    TEST_CASE or c
+AxDB40: MACRO
+        DB $00,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $80,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP B2
+    TEST_CASE or d
+AxDB30: MACRO
+        DB $00,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $80,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP B3
+    TEST_CASE or e
+AxDB20: MACRO
+        DB $00,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $80,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP B4
+    TEST_CASE or h
+AxDB10: MACRO
+        DB $00,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $80,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP B5
+    TEST_CASE or l
+AxDB00: MACRO
+        DB $00,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $80,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP B7
+    TEST_CASE or a
+AxDAF0: MACRO
+        DB $00,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $80,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP B8
+    TEST_CASE cp b
+AxDAE0: MACRO
+        DB $C0,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP B9
+    TEST_CASE cp c
+AxDAD0: MACRO
+        DB $C0,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP BA
+    TEST_CASE cp d
+AxDAC0: MACRO
+        DB $C0,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP BB
+    TEST_CASE cp e
+AxDAB0: MACRO
+        DB $C0,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP BC
+    TEST_CASE cp h
+AxDAA0: MACRO
+        DB $C0,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP BD
+    TEST_CASE cp l
+AxDA90: MACRO
+        DB $C0,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP BF
+    TEST_CASE cp a
+AxDA80: MACRO
+        DB $C0,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+; ----
+
+    ; OP C6
+    TEST_CASE add a,$9a
+AxDA70: MACRO
+        DB $30,$FE,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $80,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP CE
+    TEST_CASE adc a,$9a
+AxDA60: MACRO
+        DB $30,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $80,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP D6
+    TEST_CASE sub $9a
+AxDA50: MACRO
+        DB $40,$65,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $70,$66,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP DE
+    TEST_CASE sbc a,$9a
+AxDA40: MACRO
+        DB $70,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP E6
+    TEST_CASE and $9a
+AxDA30: MACRO
+        DB $20,$9A,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $A0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP EE
+    TEST_CASE xor $9a
+AxDA20: MACRO
+        DB $00,$65,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $00,$9A,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP F6
+    TEST_CASE or $9a
+AxDA10: MACRO
+        DB $00,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $00,$9A,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP FE
+    TEST_CASE cp $9a
+AxDA00: MACRO
+        DB $40,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $70,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
 jp eof
 
 SECTION "data", ROMX[$4000]
+    AxDA00
+    AxDA10
+    AxDA20
+    AxDA30
+    AxDA40
+    AxDA50
+    AxDA60
+    AxDA70
+    AxDA80
+    AxDA90
+    AxDAA0
+    AxDAB0
+    AxDAC0
+    AxDAD0
+    AxDAE0
+    AxDAF0
+    AxDB00
+    AxDB10
+    AxDB20
+    AxDB30
+    AxDB40
+    AxDB50
+    AxDB60
+    AxDB70
+    AxDB80
+    AxDB90
+    AxDBA0
+    AxDBB0
+    AxDBC0
+    AxDBD0
+    AxDBE0
+    AxDBF0
+    AxDC00
+    AxDC10
+    AxDC20
+    AxDC30
     AxDC40
     AxDC50
     AxDC60
