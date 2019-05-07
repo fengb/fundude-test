@@ -103,10 +103,84 @@ AxDF70: MACRO
         DB $00,$00,$00,$00,$00,$00,$00,$00
         ENDM
 
+; ----
+
+    ; OP 13
+    TEST_CASE inc de
+AxDF60: MACRO
+        DB $F0,$FF,$FF,$FF,$00,$00,$FF,$FF
+        DB $00,$00,$00,$00,$01,$00,$00,$00
+        ENDM
+
+    ; OP 14
+    TEST_CASE inc d
+AxDF50: MACRO
+        DB $B0,$FF,$FF,$FF,$FF,$00,$FF,$FF
+        DB $00,$00,$00,$00,$00,$01,$00,$00
+        ENDM
+
+    ; OP 15
+    TEST_CASE dec d
+AxDF40: MACRO
+        DB $50,$FF,$FF,$FF,$FF,$FE,$FF,$FF
+        DB $60,$00,$00,$00,$00,$FF,$00,$00
+        ENDM
+
+    ; OP 17
+    TEST_CASE rla
+AxDF30: MACRO
+        DB $10,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $00,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP 19
+    TEST_CASE add hl,de
+AxDF20: MACRO
+        DB $B0,$FF,$FF,$FF,$FF,$FF,$FE,$FF
+        DB $00,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP 1B
+    TEST_CASE dec de
+AxDF10: MACRO
+        DB $F0,$FF,$FF,$FF,$FE,$FF,$FF,$FF
+        DB $00,$00,$00,$00,$FF,$FF,$00,$00
+        ENDM
+
+    ; OP 1C
+    TEST_CASE inc e
+AxDF00: MACRO
+        DB $B0,$FF,$FF,$FF,$00,$FF,$FF,$FF
+        DB $00,$00,$00,$00,$01,$00,$00,$00
+        ENDM
+
+    ; OP 1D
+    TEST_CASE dec e
+AxDEF0: MACRO
+        DB $50,$FF,$FF,$FF,$FE,$FF,$FF,$FF
+        DB $60,$00,$00,$00,$FF,$00,$00,$00
+        ENDM
+
+    ; OP 1F
+    TEST_CASE rra
+AxDEE0: MACRO
+        DB $10,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $00,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
 endloop:
     jp endloop
 
 SECTION "data", ROMX[$4000]
+    AxDEE0
+    AxDEF0
+    AxDF00
+    AxDF10
+    AxDF20
+    AxDF30
+    AxDF40
+    AxDF50
+    AxDF60
     AxDF70
     AxDF80
     AxDF90
