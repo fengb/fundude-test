@@ -1,4 +1,4 @@
-DUMP: MACRO
+SAVE: MACRO
       push hl
       push de
       push bc
@@ -17,12 +17,20 @@ RESET: MACRO
 
 TEST_CASE: MACRO
            RESET 0
-           \1
-           DUMP
+           IF _NARG == 1
+             \1
+           ELSE
+             \1, \2
+           ENDC
+           SAVE
 
            RESET $ffff
-           \1
-           DUMP
+           IF _NARG == 1
+             \1
+           ELSE
+             \1, \2
+           ENDC
+           SAVE
            ENDM
 
 SECTION "header", HOME[$100]
@@ -243,7 +251,6 @@ AxDE40: MACRO
         ENDM
 
     ; OP 39
-    ; TODO -- this is buggy and outputs 0x29 (add hl,hl)
     TEST_CASE add hl,sp
 AxDE30: MACRO
         DB $B0,$FF,$FF,$FF,$FF,$FF,$FE,$FF
