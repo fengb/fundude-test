@@ -43,7 +43,7 @@ SECTION "main", HOME[$150]
     ; OP 03
     TEST_CASE inc bc
 AxDFF0: MACRO
-        DB $F0,$FF,$FF,$00,$01,$00,$FF,$00
+        DB $F0,$FF,$00,$00,$FF,$FF,$FF,$FF
         DB $00,$00,$01,$00,$00,$00,$00,$00
         ENDM
 
