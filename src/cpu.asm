@@ -471,8 +471,7 @@ AxDC40: MACRO
         DB $C0,$00,$00,$00,$00,$00,$00,$00
         ENDM
 
-endloop:
-    jp endloop
+jp eof
 
 SECTION "data", ROMX[$4000]
     AxDC40
@@ -486,6 +485,7 @@ SECTION "data", ROMX[$4000]
     AxDCC0
     AxDCD0
     AxDCE0
+    AxDCF0
     AxDD00
     AxDD10
     AxDD20
@@ -534,3 +534,7 @@ SECTION "data", ROMX[$4000]
     AxDFD0
     AxDFE0
     AxDFF0
+
+SECTION "eof", ROMX[$7ffd]
+eof:
+    jp eof
