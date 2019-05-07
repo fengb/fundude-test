@@ -371,10 +371,123 @@ AxDD20: MACRO
         DB $80,$00,$00,$00,$00,$00,$00,$00
         ENDM
 
+; ----
+
+    ; OP 90
+    TEST_CASE sub b
+AxDD10: MACRO
+        DB $C0,$00,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP 91
+    TEST_CASE sub c
+AxDD00: MACRO
+        DB $C0,$00,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP 92
+    TEST_CASE sub d
+AxDCF0: MACRO
+        DB $C0,$00,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP 93
+    TEST_CASE sub e
+AxDCE0: MACRO
+        DB $C0,$00,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP 94
+    TEST_CASE sub h
+AxDCD0: MACRO
+        DB $C0,$00,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP 95
+    TEST_CASE sub l
+AxDCC0: MACRO
+        DB $C0,$00,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP 97
+    TEST_CASE sub a
+AxDCB0: MACRO
+        DB $C0,$00,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP 98
+    TEST_CASE sbc a,b
+AxDCA0: MACRO
+        DB $70,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP 99
+    TEST_CASE sbc a,c
+AxDC90: MACRO
+        DB $70,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP 9A
+    TEST_CASE sbc a,d
+AxDC80: MACRO
+        DB $70,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP 9B
+    TEST_CASE sbc a,e
+AxDC70: MACRO
+        DB $70,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP 9C
+    TEST_CASE sbc a,h
+AxDC60: MACRO
+        DB $70,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP 9D
+    TEST_CASE sbc a,l
+AxDC50: MACRO
+        DB $70,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
+    ; OP 9F
+    TEST_CASE sbc a,a
+AxDC40: MACRO
+        DB $70,$FF,$FF,$FF,$FF,$FF,$FF,$FF
+        DB $C0,$00,$00,$00,$00,$00,$00,$00
+        ENDM
+
 endloop:
     jp endloop
 
 SECTION "data", ROMX[$4000]
+    AxDC40
+    AxDC50
+    AxDC60
+    AxDC70
+    AxDC80
+    AxDC90
+    AxDCA0
+    AxDCB0
+    AxDCC0
+    AxDCD0
+    AxDCE0
+    AxDD00
+    AxDD10
     AxDD20
     AxDD30
     AxDD40
